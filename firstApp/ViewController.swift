@@ -36,11 +36,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         return state[row]
     }
     @IBAction func stateBtnPressed(_ sender: Any) {
+        for view in self.view.subviews as [UIView]{
+            view.isHidden = true
+        }
         statePicker.isHidden = false
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         statePickerBtn.setTitle(state[row], for: UIControlState.normal)
+    
+        for view in self.view.subviews as [UIView]{
+            view.isHidden = false
+        }
         statePicker.isHidden = true
     }
     @IBAction func buyBtnPressed(_ sender: Any) {

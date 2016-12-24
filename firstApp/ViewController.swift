@@ -54,6 +54,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         for view in self.view.subviews as [UIView]{
             view.isHidden = true
         }
+        print("Hi")
     }
     
 }
